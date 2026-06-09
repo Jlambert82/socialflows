@@ -1,0 +1,227 @@
+.wrapper {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  gap: 0;
+}
+
+.calendarArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px 24px;
+}
+
+.calHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.calNav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.calMonthYear {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  min-width: 170px;
+  text-align: center;
+}
+
+.filterBtn {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background: rgba(255,255,255,0.05);
+  color: var(--text-secondary);
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filterBtn:hover { background: rgba(255,255,255,0.08); color: var(--text-primary); }
+
+.filterActive {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--lavender-bg);
+  color: var(--lavender);
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.calGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 1px;
+  background: var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 0;
+}
+
+.calDayHeader {
+  background: var(--bg-surface);
+  padding: 10px 0;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.calCell {
+  background: var(--bg-card);
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 90px;
+}
+.calCell:hover { background: var(--bg-elevated); }
+
+.calCellOther {
+  background: var(--bg-surface);
+  opacity: 0.5;
+  cursor: default;
+}
+.calCellOther:hover { background: var(--bg-surface); }
+
+.calCellToday .calDayNum {
+  background: var(--lavender);
+  color: #1a0a4a;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.calCellSelected {
+  background: rgba(196,181,253,0.06);
+  outline: 1.5px solid rgba(196,181,253,0.3);
+  outline-offset: -1.5px;
+}
+
+.calDayNum {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.calPostList {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.postDot {
+  padding: 3px 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.postDotTitle {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-primary);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.postDotTime {
+  font-size: 9px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.morePost {
+  font-size: 10px;
+  color: var(--text-muted);
+  padding: 2px 6px;
+  font-weight: 500;
+}
+
+.dayDetail {
+  width: 300px;
+  min-width: 300px;
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.dayDetailHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.dayDetailDate {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.dayDetailCount {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.detailPost {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.detailPost:last-child { border-bottom: none; }
+
+.detailTime {
+  font-size: 11px;
+  color: var(--lavender);
+  font-weight: 600;
+  white-space: nowrap;
+  margin-top: 2px;
+  min-width: 52px;
+}
+
+.detailContent { flex: 1; min-width: 0; }
+
+.detailTitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
